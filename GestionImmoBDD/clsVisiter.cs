@@ -20,6 +20,16 @@ namespace GestionImmoBDD
         public int ClientsID { get; set; }
         public Clients Clients { get; set; }
 
+        public DateTime DateVisite
+        {
+            get => cDateVisite;
+
+            set
+            {
+                if (value <= DateTime.Now) { throw new ArgumentException($"{nameof(DateVisite)} : La date de visite doit être supérieur à la date d'aujourd'hui."); }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

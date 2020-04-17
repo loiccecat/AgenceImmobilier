@@ -39,13 +39,6 @@ namespace GestionImmoBDD
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        
-       
-        //55555
-        //8888888
-        //888888
-        //8888
-        //8888
 
        
     }

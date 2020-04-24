@@ -14,6 +14,12 @@ namespace GestionImmoBDD
     public class Visiter : INotifyPropertyChanged
     {
         private DateTime cDateVisite = DateTime.Now;
+
+        public static readonly int VisiteHeureMax = 17;
+
+        public static readonly int VisiteHeureMin = 8;
+        
+
         public int LocationsID { get; set; }
         public Locations Locations { get; set; }
 
@@ -27,8 +33,13 @@ namespace GestionImmoBDD
             set
             {
                 if (value <= DateTime.Now) { throw new ArgumentException($"{nameof(DateVisite)} : La date de visite doit être supérieur à la date d'aujourd'hui."); }
+                if (value.Hour > VisiteHeureMax) { throw new ArgumentException($"{nameof(DateVisite)} : La date de visite doit être supérieur à la date d'aujourd'hui."); }
+                if (value.Hour > VisiteHeureMin) { throw new ArgumentException($"{nameof(DateVisite)} : La date de visite doit être supérieur à la date d'aujourd'hui."); }
+                cDateVisite = value;
             }
         }
+
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

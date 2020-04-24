@@ -10,6 +10,7 @@ namespace GestionImmoBDD
     {
         public int ID { get; set; }
         public string RueNumero { get; set; }
+        public DateTime DateLocation { get; set; }
 
 
         #region Cardinalité de type [1:N], côté 1 : 1 ville par bien immobilier.
@@ -25,6 +26,7 @@ namespace GestionImmoBDD
 
         #region Cardinalité de type [1:N], côté 1 : 1 type par bien immobilier.
         public Types Types { get; set; }
+        public int TypesID { get; internal set; }
         #endregion
 
 

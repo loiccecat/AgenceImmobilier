@@ -33,8 +33,8 @@ namespace GestionImmoBDD
             set
             {
                 if (value <= DateTime.Now) { throw new ArgumentException($"{nameof(DateVisite)} : La date de visite doit être supérieur à la date d'aujourd'hui."); }
-                if (value.Hour > VisiteHeureMax) { throw new ArgumentException($"{nameof(DateVisite)} : La date de visite doit être supérieur à la date d'aujourd'hui."); }
-                if (value.Hour > VisiteHeureMin) { throw new ArgumentException($"{nameof(DateVisite)} : La date de visite doit être supérieur à la date d'aujourd'hui."); }
+                if (value.Hour > VisiteHeureMax) { throw new ArgumentException($"{nameof(DateVisite)} : L'heure de visite ne peut être supérieur à 17h."); }
+                if (value.Hour > VisiteHeureMin) { throw new ArgumentException($"{nameof(DateVisite)} : L'heure de visite ne peut être inférieur à 8h."); }
                 cDateVisite = value;
             }
         }

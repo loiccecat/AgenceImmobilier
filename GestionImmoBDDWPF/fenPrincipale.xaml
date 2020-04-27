@@ -1,0 +1,35 @@
+﻿<Window x:Class="GestionImmoBDDWPF.fenPrincipale"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionImmoBDDWPF"
+        mc:Ignorable="d"
+        Title="Gestion d'une agence immobilière" Height="750" Width="1000" Closing="OnClosing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Name="mnuPrincipal">
+            <MenuItem Header="Application">
+                <MenuItem Header="Sauvegarder modifications" Click="SauvegarderModifications"/>
+                <Separator/>
+                <MenuItem Header="Quitter"                   Click="Quitter"/>
+            </MenuItem>
+            <MenuItem Header="Affichage">
+                <MenuItem Header="Agents"                   Click="AfficherAgents"/>
+                <MenuItem Header="Clients"                  Click="AfficherClients"/>
+                <MenuItem Header="Propriétaires"            Click="AfficherProprietaires"/>
+                <MenuItem Header="Types"                    Click="AfficherTypes"/>
+                <MenuItem Header="Bien immobiliers"         Click="AfficherBienImmobiliers"/>
+                <MenuItem Header="Locations"                Click="AfficherLocations"/>
+                <MenuItem Header="Visiter"                  Click="AfficherVisiter"/>
+                <MenuItem Header="Villes"                   Click="AfficherVilles"/>
+            </MenuItem>
+        </Menu>
+
+        <Frame Name="Cadre" Grid.Row="1" Navigated="NavServiceOnNavigated" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>

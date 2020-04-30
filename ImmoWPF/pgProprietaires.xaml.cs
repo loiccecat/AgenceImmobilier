@@ -14,7 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GestionImmoBDDWPF
+
+namespace ImmoWPF
 {
     /// <summary>
     /// Logique d'interaction pour pgProprietaires.xaml

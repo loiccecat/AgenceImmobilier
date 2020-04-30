@@ -11,10 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GestionImmoBDDWPF
+namespace ImmoWPF
 {
     /// <summary>
-    /// Logique d'interaction pour fenPrincipale.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class fenPrincipale : Window
     {

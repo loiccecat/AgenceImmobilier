@@ -80,10 +80,10 @@ namespace GestionImmoBDD
 
             modelBuilder.Entity<Locations>().HasData(
                 new Locations() { ID = 1, Prix = 550, BienImmobiliersID = 1, AgentsID = 2, ClientsID = 5 },
-                new Locations() { ID = 1, Prix = 500, BienImmobiliersID = 2, AgentsID = 1, ClientsID = 4 },
-                new Locations() { ID = 1, Prix = 600, BienImmobiliersID = 3, AgentsID = 4, ClientsID = 2 },
-                new Locations() { ID = 1, Prix = 499, BienImmobiliersID = 4, AgentsID = 3, ClientsID = 3 },
-                new Locations() { ID = 1, Prix = 450, BienImmobiliersID = 5, AgentsID = 2, ClientsID = 1 }
+                new Locations() { ID = 2, Prix = 500, BienImmobiliersID = 2, AgentsID = 1, ClientsID = 4 },
+                new Locations() { ID = 3, Prix = 600, BienImmobiliersID = 3, AgentsID = 4, ClientsID = 2 },
+                new Locations() { ID = 4, Prix = 499, BienImmobiliersID = 4, AgentsID = 3, ClientsID = 3 },
+                new Locations() { ID = 5, Prix = 450, BienImmobiliersID = 5, AgentsID = 2, ClientsID = 1 }
                 );
 
             modelBuilder.Entity<Visiter>().HasData(

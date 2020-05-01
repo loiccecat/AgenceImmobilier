@@ -21,6 +21,7 @@ namespace GestionImmoBDD
 
         #region Cardinalité de type [1:N], côté 1 : 1 propriétaire par bien immobilier.
         public Proprietaires Proprietaires { get; set; }
+        public int ProprietairesID { get; internal set; }
         #endregion
 
 

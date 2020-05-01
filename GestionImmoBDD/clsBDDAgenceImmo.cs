@@ -52,8 +52,8 @@ namespace GestionImmoBDD
             );
 
             modelBuilder.Entity<Agents>().HasData(
-                new Agents() { ID = 1, Nom = "Jean-Philippe", Prenom = "Hubert" },
-                new Agents() { ID = 2, Nom = "George", Prenom = "De Monaco Des Iles" }
+                new Agents() { ID = 1, Nom = "Jean-Philippe", Prenom = "Hubert", VillesID = 1 },
+                new Agents() { ID = 2, Nom = "George", Prenom = "De Monaco Des Iles", VillesID = 5 }
             );
 
             modelBuilder.Entity<Proprietaires>().HasData(
@@ -64,44 +64,44 @@ namespace GestionImmoBDD
                 new Proprietaires() { ID = 5, Nom = "Kévin",    Prenom = "Carapils",    RueNumero = "Rue des barakis, 1",    VillesID = 7 }
                 );
 
-            modelBuilder.Entity<BienImmobiliers>().HasData(
-                new BienImmobiliers() { ID = 1, DateLocation = new DateTime(2015, 03, 24), RueNumero = "Rue de Morlanwelz, 17",       TypesID = 1 },
-                new BienImmobiliers() { ID = 2, DateLocation = new DateTime(2015, 07, 15), RueNumero = "Rue de Zaventem, 150",        TypesID = 2 },
-                new BienImmobiliers() { ID = 3, DateLocation = new DateTime(2017, 12, 15), RueNumero = "Rue de Peruwelz, 190",        TypesID = 1 },
-                new BienImmobiliers() { ID = 4, DateLocation = new DateTime(2018, 05, 07), RueNumero = "Chaussée de Bruxelles, 320",  TypesID = 2 },
-                new BienImmobiliers() { ID = 5, DateLocation = new DateTime(2019, 01, 24), RueNumero = "Rue de La petite Glace, 1",   TypesID = 1 },
-                new BienImmobiliers() { ID = 6, DateLocation = new DateTime(2019, 01, 24), RueNumero = "Rue Paul Pastur, A2",         TypesID = 2 }
-            );
+              modelBuilder.Entity<BienImmobiliers>().HasData(
+                  new BienImmobiliers() { ID = 1, RueNumero = "Rue de Morlanwelz, 17",      VillesID = 1, TypesID = 1, ProprietairesID = 1 },
+                  new BienImmobiliers() { ID = 2, RueNumero = "Rue de Zaventem, 150",       VillesID = 5, TypesID = 2, ProprietairesID = 2 },
+                  new BienImmobiliers() { ID = 3, RueNumero = "Rue de Peruwelz, 190",       VillesID = 4, TypesID = 1, ProprietairesID = 3},
+                  new BienImmobiliers() { ID = 4, RueNumero = "Chaussée de Bruxelles, 320", VillesID = 6, TypesID = 2, ProprietairesID = 4 },
+                  new BienImmobiliers() { ID = 5, RueNumero = "Rue de La petite Glace, 1",  VillesID = 7, TypesID = 1, ProprietairesID = 5 },
+                  new BienImmobiliers() { ID = 6, RueNumero = "Rue Paul Pastur, A2",        VillesID = 2, TypesID = 2, ProprietairesID = 2 }
+              );
 
-            modelBuilder.Entity<Types>().HasData(
-                new Types() { ID = 1, Designation = "Maison" },
-                new Types() { ID = 2, Designation = "Appartement" }
-                );
+             modelBuilder.Entity<Types>().HasData(
+                 new Types() { ID = 1, Designation = "Maison" },
+                 new Types() { ID = 2, Designation = "Appartement" }
+                 );
 
-            modelBuilder.Entity<Locations>().HasData(
-                new Locations() { ID = 1, Prix = 550, BienImmobiliersID = 1, AgentsID = 2, ClientsID = 5 },
-                new Locations() { ID = 2, Prix = 500, BienImmobiliersID = 2, AgentsID = 1, ClientsID = 4 },
-                new Locations() { ID = 3, Prix = 600, BienImmobiliersID = 3, AgentsID = 4, ClientsID = 2 },
-                new Locations() { ID = 4, Prix = 499, BienImmobiliersID = 4, AgentsID = 3, ClientsID = 3 },
-                new Locations() { ID = 5, Prix = 450, BienImmobiliersID = 5, AgentsID = 2, ClientsID = 1 }
-                );
+              modelBuilder.Entity<Locations>().HasData(
+                  new Locations() { ID = 1, Prix = 550, BienImmobiliersID = 1, AgentsID = 2, ClientsID = 5 },
+                  new Locations() { ID = 2, Prix = 500, BienImmobiliersID = 2, AgentsID = 1, ClientsID = 4 },
+                  new Locations() { ID = 3, Prix = 600, BienImmobiliersID = 3, AgentsID = 1, ClientsID = 2 },
+                  new Locations() { ID = 4, Prix = 499, BienImmobiliersID = 4, AgentsID = 2, ClientsID = 3 },
+                  new Locations() { ID = 5, Prix = 450, BienImmobiliersID = 5, AgentsID = 2, ClientsID = 1 }
+                  );
 
-            modelBuilder.Entity<Visiter>().HasData(
-                new Visiter() { ClientsID = 1, LocationsID = 1, DateVisite = new DateTime(2020, 09, 24, 14, 00, 00) },
-                new Visiter() { ClientsID = 2, LocationsID = 1, DateVisite = new DateTime(2020, 11, 01, 15, 00, 00) },
-                new Visiter() { ClientsID = 3, LocationsID = 1, DateVisite = new DateTime(2020, 10, 01, 16, 00, 00) },
-                new Visiter() { ClientsID = 4, LocationsID = 2, DateVisite = new DateTime(2020, 11, 01, 14, 00, 00) },
-                new Visiter() { ClientsID = 5, LocationsID = 2, DateVisite = new DateTime(2020, 10, 01, 9, 00, 00)  },
-                new Visiter() { ClientsID = 6, LocationsID = 2, DateVisite = new DateTime(2020, 11, 01, 11, 00, 00) }
-            );
+              modelBuilder.Entity<Visiter>().HasData(
+                  new Visiter() { ClientsID = 1, LocationsID = 1, DateVisite = new DateTime(2020, 09, 24, 14, 00, 00) },
+                  new Visiter() { ClientsID = 2, LocationsID = 1, DateVisite = new DateTime(2020, 11, 01, 15, 00, 00) },
+                  new Visiter() { ClientsID = 3, LocationsID = 1, DateVisite = new DateTime(2020, 10, 01, 16, 00, 00) },
+                  new Visiter() { ClientsID = 4, LocationsID = 2, DateVisite = new DateTime(2020, 11, 01, 14, 00, 00) },
+                  new Visiter() { ClientsID = 5, LocationsID = 2, DateVisite = new DateTime(2020, 10, 01, 9, 00, 00)  },
+                  new Visiter() { ClientsID = 2, LocationsID = 2, DateVisite = new DateTime(2020, 11, 01, 11, 00, 00) }
+              );
 
-            modelBuilder.Entity<Clients>().HasData(
-                new Clients() { ID = 1, Nom = "Toomuch",    Prenom = "Thérèse",  RueNumero = "Rue de Fontigny 170",  VillesID = 6 },
-                new Clients() { ID = 2, Nom = "Goudron",    Prenom = "Joseph",   RueNumero = "Rue Libert 140",       VillesID = 2 },
-                new Clients() { ID = 3, Nom = "Alla",       Prenom = "Hubert",   RueNumero = "Perksesteenweg 204",   VillesID = 4 },
-                new Clients() { ID = 4, Nom = "Decubertin", Prenom = "Mohamed",  RueNumero = "Rue du Monument 157",  VillesID = 7 },
-                new Clients() { ID = 5, Nom = "Binetto",    Prenom = "Vincenzo", RueNumero = "Rue du Stade 494",     VillesID = 7 }
-                );
+              modelBuilder.Entity<Clients>().HasData(
+                  new Clients() { ID = 1, Nom = "Toomuch",    Prenom = "Thérèse",  RueNumero = "Rue de Fontigny 170",  VillesID = 6 },
+                  new Clients() { ID = 2, Nom = "Goudron",    Prenom = "Joseph",   RueNumero = "Rue Libert 140",       VillesID = 2 },
+                  new Clients() { ID = 3, Nom = "Alla",       Prenom = "Hubert",   RueNumero = "Perksesteenweg 204",   VillesID = 4 },
+                  new Clients() { ID = 4, Nom = "Decubertin", Prenom = "Mohamed",  RueNumero = "Rue du Monument 157",  VillesID = 7 },
+                  new Clients() { ID = 5, Nom = "Binetto",    Prenom = "Vincenzo", RueNumero = "Rue du Stade 494",     VillesID = 7 }
+                  );
             #endregion
         }
         #endregion

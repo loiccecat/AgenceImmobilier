@@ -32,7 +32,7 @@ namespace ImmoWPF
 
         private void AjouterAgent(object sender, RoutedEventArgs e)
         {
-            Statics.TryCatch(() => { lvAgents.SelectedItem = BDD.AjouterAgent("Nouvel", "Agent", BDD.Villes.FirstOrDefault(), ""); }, nameof(AjouterAgent));
+            Statics.TryCatch(() => { lvAgents.SelectedItem = BDD.AjouterAgent("Nouvel", "Agent", BDD.Villes.FirstOrDefault(), "", "0032"); }, nameof(AjouterAgent));
         }
 
         private void SupprimerAgent(object sender, RoutedEventArgs e)

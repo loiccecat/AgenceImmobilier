@@ -33,7 +33,7 @@ namespace ImmoWPF
 
         private void AjouterProprietaire(object sender, RoutedEventArgs e)
         {
-            Statics.TryCatch(() => { lvProprietaires.SelectedItem = BDD.AjouterProprietaire("Nouveau", "Proprietaire", BDD.Villes.FirstOrDefault(), ""); }, nameof(AjouterProprietaire));
+            Statics.TryCatch(() => { lvProprietaires.SelectedItem = BDD.AjouterProprietaire("Nouveau", "Proprietaire", BDD.Villes.FirstOrDefault(), "", "0032"); }, nameof(AjouterProprietaire));
         }
 
         private void SupprimerProprietaire(object sender, RoutedEventArgs e)

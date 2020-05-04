@@ -9,6 +9,48 @@
       Title="pgVisiter">
 
     <Grid>
-        
+        <GroupBox Name="grpListeVisiter" Header="Liste des visites" Margin="2"  >
+            <Grid>
+                <ListView Name="lvVisiter" ItemsSource="{Binding}" SelectionMode="Single" Margin="1">
+                    <ListView.Resources>
+                        <ContextMenu x:Key="ctxOnItem">
+                            <MenuItem Header="Supprimer la visite sélectionnée" Click="SupprimerVisite"/>
+                            <MenuItem Header="Ajouter une visite" Click="AjouterVisite"/>
+                        </ContextMenu>
+                    </ListView.Resources>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="ContextMenu" Value="{StaticResource ctxOnItem}"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Ajouter une visite" Click="AjouterVisite"/>
+                        </ContextMenu>
+                    </ListView.ContextMenu>
+
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header ="Nom">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBox Text="{Binding Nom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="125"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="CodePostal">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBox Text="{Binding CodePostal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="5" Width="75"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Page>

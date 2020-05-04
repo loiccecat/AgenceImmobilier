@@ -32,7 +32,7 @@ namespace ImmoWPF
 
         private void AjouterClient(object sender, RoutedEventArgs e)
         {
-            Statics.TryCatch(() => { lvClients.SelectedItem = BDD.AjouterClient("Nouveau", "Client", BDD.Villes.FirstOrDefault(), ""); }, nameof(AjouterClient));
+            Statics.TryCatch(() => { lvClients.SelectedItem = BDD.AjouterClient("Nouveau", "Client", BDD.Villes.FirstOrDefault(), "", "0032"); }, nameof(AjouterClient));
         }
 
         private void SupprimerClient(object sender, RoutedEventArgs e)

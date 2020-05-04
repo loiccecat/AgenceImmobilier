@@ -70,12 +70,12 @@ namespace GestionImmoBDD
         #endregion
 
         #region Méthodes permettant d'ajouter/d'enlever des données dans les tables de la BDD
-        public Agents AjouterAgent(string aNom, string aPrenom, Villes aVille, string aRueNumero) { return BDD?.AjouterAgent(aNom, aPrenom, aVille, aRueNumero); }
-        public Clients AjouterClient(string aNom, string aPrenom, Villes aVille, string aRueNumero) { return BDD?.AjouterClient(aNom, aPrenom, aVille, aRueNumero); }
-        public Proprietaires AjouterProprietaire(string aNom, string aPrenom, Villes aVille, string aRueNumero) { return BDD?.AjouterProprietaire(aNom, aPrenom, aVille, aRueNumero); }
+        public Agents AjouterAgent(string aNom, string aPrenom, Villes aVille, string aRueNumero, string aNumeroTelephone) { return BDD?.AjouterAgent(aNom, aPrenom, aVille, aRueNumero, aNumeroTelephone); }
+        public Clients AjouterClient(string aNom, string aPrenom, Villes aVille, string aRueNumero, string aNumeroTelephone) { return BDD?.AjouterClient(aNom, aPrenom, aVille, aRueNumero, aNumeroTelephone); }
+        public Proprietaires AjouterProprietaire(string aNom, string aPrenom, Villes aVille, string aRueNumero, string aNumeroTelephone) { return BDD?.AjouterProprietaire(aNom, aPrenom, aVille, aRueNumero, aNumeroTelephone); }
         public BienImmobiliers AjouterBienImmobilier(DateTime aDateLocation, Villes aVille, string aRueNumero) { return BDD?.AjouterBienImmobilier(aDateLocation, aVille, aRueNumero); }
         public Visiter AjouterVisiter(Locations aLocation, Clients aClient) { return BDD?.AjouterVisiter(aLocation, aClient); }
-        public Locations AjouterLocation(uint aPrix) { return BDD?.AjouterLocation(aPrix); }
+        public Locations AjouterLocation(uint aPrix, DateTime aDateDebut, DateTime aDateFin) { return BDD?.AjouterLocation(aPrix, aDateDebut, aDateFin); }
         public Types AjouterType(string aDesignation) { return BDD?.AjouterType(aDesignation); }
         public Villes AjouterVille(string aNom, string aCodePostal) { return BDD?.AjouterVille(aNom, aCodePostal); }
 

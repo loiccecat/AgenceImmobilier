@@ -52,25 +52,25 @@ namespace GestionImmoBDD
             );
 
             modelBuilder.Entity<Agents>().HasData(
-                new Agents() { ID = 1, Nom = "Jean-Philippe", Prenom = "Hubert", VillesID = 1 },
-                new Agents() { ID = 2, Nom = "George", Prenom = "De Monaco Des Iles", VillesID = 5 }
+                new Agents() { ID = 1, Nom = "Jean-Philippe", Prenom = "Hubert", VillesID = 1, NumeroTelephone = "00321123456789" },
+                new Agents() { ID = 2, Nom = "George", Prenom = "De Monaco Des Iles", VillesID = 5, NumeroTelephone = "00321123456789" }
             );
 
             modelBuilder.Entity<Proprietaires>().HasData(
-                new Proprietaires() { ID = 1, Nom = "Jean-Yve", Prenom = "Jean-Pascal", RueNumero = "Rue de la Lorenne, 25", VillesID = 2},
-                new Proprietaires() { ID = 2, Nom = "Gérard",   Prenom = "Dubuissier",  RueNumero = "Chaussée de Wavre, 50", VillesID = 5 },
-                new Proprietaires() { ID = 3, Nom = "Julie",    Prenom = "Vanschroven", RueNumero = "Koningstraat, 100",     VillesID = 1 },
-                new Proprietaires() { ID = 4, Nom = "Martijn",  Prenom = "Vankleurte",  RueNumero = "Brusselstraat, 300",    VillesID = 4 },
-                new Proprietaires() { ID = 5, Nom = "Kévin",    Prenom = "Carapils",    RueNumero = "Rue des barakis, 1",    VillesID = 7 }
+                new Proprietaires() { ID = 1, Nom = "Jean-Yve", Prenom = "Jean-Pascal", RueNumero = "Rue de la Lorenne, 25", VillesID = 2, NumeroTelephone = "00321123456789" },
+                new Proprietaires() { ID = 2, Nom = "Gérard",   Prenom = "Dubuissier",  RueNumero = "Chaussée de Wavre, 50", VillesID = 5, NumeroTelephone = "00321123456789" },
+                new Proprietaires() { ID = 3, Nom = "Julie",    Prenom = "Vanschroven", RueNumero = "Koningstraat, 100",     VillesID = 1, NumeroTelephone = "00321123456789" },
+                new Proprietaires() { ID = 4, Nom = "Martijn",  Prenom = "Vankleurte",  RueNumero = "Brusselstraat, 300",    VillesID = 4, NumeroTelephone = "00321123456789" },
+                new Proprietaires() { ID = 5, Nom = "Kévin",    Prenom = "Carapils",    RueNumero = "Rue des barakis, 1",    VillesID = 7, NumeroTelephone = "00321123456789" }
                 );
 
               modelBuilder.Entity<BienImmobiliers>().HasData(
-                  new BienImmobiliers() { ID = 1, RueNumero = "Rue de Morlanwelz, 17",      VillesID = 1, TypesID = 1, ProprietairesID = 1 },
-                  new BienImmobiliers() { ID = 2, RueNumero = "Rue de Zaventem, 150",       VillesID = 5, TypesID = 2, ProprietairesID = 2 },
-                  new BienImmobiliers() { ID = 3, RueNumero = "Rue de Peruwelz, 190",       VillesID = 4, TypesID = 1, ProprietairesID = 3},
-                  new BienImmobiliers() { ID = 4, RueNumero = "Chaussée de Bruxelles, 320", VillesID = 6, TypesID = 2, ProprietairesID = 4 },
-                  new BienImmobiliers() { ID = 5, RueNumero = "Rue de La petite Glace, 1",  VillesID = 7, TypesID = 1, ProprietairesID = 5 },
-                  new BienImmobiliers() { ID = 6, RueNumero = "Rue Paul Pastur, A2",        VillesID = 2, TypesID = 2, ProprietairesID = 2 }
+                  new BienImmobiliers() { ID = 1, DateLocation = new DateTime(2019, 04, 25), RueNumero = "Rue de Morlanwelz, 17",      VillesID = 1, TypesID = 1, ProprietairesID = 1 },
+                  new BienImmobiliers() { ID = 2, DateLocation = new DateTime(2019, 04, 25), RueNumero = "Rue de Zaventem, 150",       VillesID = 5, TypesID = 2, ProprietairesID = 2 },
+                  new BienImmobiliers() { ID = 3, DateLocation = new DateTime(2019, 04, 25), RueNumero = "Rue de Peruwelz, 190",       VillesID = 4, TypesID = 1, ProprietairesID = 3},
+                  new BienImmobiliers() { ID = 4, DateLocation = new DateTime(2019, 04, 25), RueNumero = "Chaussée de Bruxelles, 320", VillesID = 6, TypesID = 2, ProprietairesID = 4 },
+                  new BienImmobiliers() { ID = 5, DateLocation = new DateTime(2019, 04, 25), RueNumero = "Rue de La petite Glace, 1",  VillesID = 7, TypesID = 1, ProprietairesID = 5 },
+                  new BienImmobiliers() { ID = 6, DateLocation = new DateTime(2019, 04, 25), RueNumero = "Rue Paul Pastur, A2",        VillesID = 2, TypesID = 2, ProprietairesID = 2 }
               );
 
              modelBuilder.Entity<Types>().HasData(
@@ -78,13 +78,13 @@ namespace GestionImmoBDD
                  new Types() { ID = 2, Designation = "Appartement" }
                  );
 
-              modelBuilder.Entity<Locations>().HasData(
-                  new Locations() { ID = 1, Prix = 550, BienImmobiliersID = 1, AgentsID = 2, ClientsID = 5 },
-                  new Locations() { ID = 2, Prix = 500, BienImmobiliersID = 2, AgentsID = 1, ClientsID = 4 },
-                  new Locations() { ID = 3, Prix = 600, BienImmobiliersID = 3, AgentsID = 1, ClientsID = 2 },
-                  new Locations() { ID = 4, Prix = 499, BienImmobiliersID = 4, AgentsID = 2, ClientsID = 3 },
-                  new Locations() { ID = 5, Prix = 450, BienImmobiliersID = 5, AgentsID = 2, ClientsID = 1 }
-                  );
+              /*modelBuilder.Entity<Locations>().HasData(
+                  new Locations() { ID = 1, Prix = 550, DateDebut = new DateTime(2019, 05, 25), DateFin = new DateTime(2020, 05, 25), BienImmobiliersID = 1, AgentsID = 2, ClientsID = 5 },
+                  new Locations() { ID = 2, Prix = 500, DateDebut = new DateTime(2019, 05, 25), DateFin = new DateTime(2020, 05, 25), BienImmobiliersID = 2, AgentsID = 1, ClientsID = 4 },
+                  new Locations() { ID = 3, Prix = 600, DateDebut = new DateTime(2019, 05, 25), DateFin = new DateTime(2020, 05, 25), BienImmobiliersID = 3, AgentsID = 1, ClientsID = 2 },
+                  new Locations() { ID = 4, Prix = 499, DateDebut = new DateTime(2019, 05, 25), DateFin = new DateTime(2020, 05, 25), BienImmobiliersID = 4, AgentsID = 2, ClientsID = 3 },
+                  new Locations() { ID = 5, Prix = 450, DateDebut = new DateTime(2019, 05, 25), DateFin = new DateTime(2020, 05, 25), BienImmobiliersID = 5, AgentsID = 2, ClientsID = 1 }
+                  );*/
 
               modelBuilder.Entity<Visiter>().HasData(
                   new Visiter() { ClientsID = 1, LocationsID = 1, DateVisite = new DateTime(2020, 09, 24, 14, 00, 00) },
@@ -96,50 +96,53 @@ namespace GestionImmoBDD
               );
 
               modelBuilder.Entity<Clients>().HasData(
-                  new Clients() { ID = 1, Nom = "Toomuch",    Prenom = "Thérèse",  RueNumero = "Rue de Fontigny 170",  VillesID = 6 },
-                  new Clients() { ID = 2, Nom = "Goudron",    Prenom = "Joseph",   RueNumero = "Rue Libert 140",       VillesID = 2 },
-                  new Clients() { ID = 3, Nom = "Alla",       Prenom = "Hubert",   RueNumero = "Perksesteenweg 204",   VillesID = 4 },
-                  new Clients() { ID = 4, Nom = "Decubertin", Prenom = "Mohamed",  RueNumero = "Rue du Monument 157",  VillesID = 7 },
-                  new Clients() { ID = 5, Nom = "Binetto",    Prenom = "Vincenzo", RueNumero = "Rue du Stade 494",     VillesID = 7 }
+                  new Clients() { ID = 1, Nom = "Toomuch",    Prenom = "Thérèse",  RueNumero = "Rue de Fontigny 170",  VillesID = 6, NumeroTelephone = "00321123456789" },
+                  new Clients() { ID = 2, Nom = "Goudron",    Prenom = "Joseph",   RueNumero = "Rue Libert 140",       VillesID = 2, NumeroTelephone = "00321123456789" },
+                  new Clients() { ID = 3, Nom = "Alla",       Prenom = "Hubert",   RueNumero = "Perksesteenweg 204",   VillesID = 4, NumeroTelephone = "00321123456789" },
+                  new Clients() { ID = 4, Nom = "Decubertin", Prenom = "Mohamed",  RueNumero = "Rue du Monument 157",  VillesID = 7, NumeroTelephone = "00321123456789" },
+                  new Clients() { ID = 5, Nom = "Binetto",    Prenom = "Vincenzo", RueNumero = "Rue du Stade 494",     VillesID = 7, NumeroTelephone = "00321123456789" }
                   );
             #endregion
         }
         #endregion
 
         #region Méthodes permettant d'ajouter des données dans les tables de la BDD
-        internal Agents AjouterAgent(string aNom, string aPrenom, Villes aVille, string aRueNumero)
+        internal Agents AjouterAgent(string aNom, string aPrenom, Villes aVille, string aRueNumero, string aNumeroTelephone)
         {
             //Gestion des erreurs
             if (aNom == null || aNom == "") { throw new ArgumentNullException($"{nameof(AjouterAgent)} : L'agent doit avoir un nom (valeur NULL ou chaine vide)."); }
             if (aPrenom == null || aPrenom == "") { throw new ArgumentNullException($"{nameof(AjouterAgent)} : L'agent doit avoir un prénom (valeur NULL ou chaine vide)."); }
             if (aVille == null) { throw new ArgumentNullException($"{nameof(AjouterAgent)} : L'agent doit avoir une ville (valeur NULL)."); }
+            if (aNumeroTelephone == null) { throw new ArgumentNullException($"{nameof(AjouterAgent)} : L'agent doit avoir une numéro de téléphone (valeur NULL)."); }
 
             //Ajout du nouvel agent
-            Agents lAgent = new Agents() { Nom = aNom, Prenom = aPrenom, Villes = aVille, RueNumero = aRueNumero };
+            Agents lAgent = new Agents() { Nom = aNom, Prenom = aPrenom, Villes = aVille, RueNumero = aRueNumero, NumeroTelephone = aNumeroTelephone };
             Agents.Local.Add(lAgent);
             return lAgent;
         }
-        internal Clients AjouterClient(string aNom, string aPrenom, Villes aVille, string aRueNumero)
+        internal Clients AjouterClient(string aNom, string aPrenom, Villes aVille, string aRueNumero, string aNumeroTelephone)
         {
             //Gestion des erreurs
             if (aNom == null || aNom == "") { throw new ArgumentNullException($"{nameof(AjouterClient)} : Le client doit avoir un nom (valeur NULL ou chaine vide)."); }
             if (aPrenom == null || aPrenom == "") { throw new ArgumentNullException($"{nameof(AjouterClient)} : Le client doit avoir un prénom (valeur NULL ou chaine vide)."); }
             if (aVille == null) { throw new ArgumentNullException($"{nameof(AjouterClient)} : Le client doit avoir une ville (valeur NULL)."); }
+            if (aNumeroTelephone == null) { throw new ArgumentNullException($"{nameof(AjouterClient)} : Le client doit avoir une numéro de téléphone (valeur NULL)."); }
 
             //Ajout du nouveau client
-            Clients lClient = new Clients() { Nom = aNom, Prenom = aPrenom, Villes = aVille, RueNumero = aRueNumero };
+            Clients lClient = new Clients() { Nom = aNom, Prenom = aPrenom, Villes = aVille, RueNumero = aRueNumero, NumeroTelephone = aNumeroTelephone };
             Clients.Local.Add(lClient);
             return lClient;
         }
-        internal Proprietaires AjouterProprietaire(string aNom, string aPrenom, Villes aVille, string aRueNumero)
+        internal Proprietaires AjouterProprietaire(string aNom, string aPrenom, Villes aVille, string aRueNumero, string aNumeroTelephone)
         {
             //Gestion des erreurs
-            if (aNom == null || aNom == "") { throw new ArgumentNullException($"{nameof(AjouterClient)} : Le propriétaire doit avoir un nom (valeur NULL ou chaine vide)."); }
-            if (aPrenom == null || aPrenom == "") { throw new ArgumentNullException($"{nameof(AjouterClient)} : Le propriétaire doit avoir un prénom (valeur NULL ou chaine vide)."); }
-            if (aVille == null) { throw new ArgumentNullException($"{nameof(AjouterClient)} : Le propriétaire doit avoir une ville (valeur NULL)."); }
+            if (aNom == null || aNom == "") { throw new ArgumentNullException($"{nameof(AjouterProprietaire)} : Le propriétaire doit avoir un nom (valeur NULL ou chaine vide)."); }
+            if (aPrenom == null || aPrenom == "") { throw new ArgumentNullException($"{nameof(AjouterProprietaire)} : Le propriétaire doit avoir un prénom (valeur NULL ou chaine vide)."); }
+            if (aVille == null) { throw new ArgumentNullException($"{nameof(AjouterProprietaire)} : Le propriétaire doit avoir une ville (valeur NULL)."); }
+            if (aNumeroTelephone == null) { throw new ArgumentNullException($"{nameof(AjouterProprietaire)} : Le propriétaire doit avoir une numéro de téléphone (valeur NULL)."); }
 
             //Ajout du nouveau propriétaire
-            Proprietaires lProprietaire = new Proprietaires() { Nom = aNom, Prenom = aPrenom, Villes = aVille, RueNumero = aRueNumero };
+            Proprietaires lProprietaire = new Proprietaires() { Nom = aNom, Prenom = aPrenom, Villes = aVille, RueNumero = aRueNumero, NumeroTelephone = aNumeroTelephone };
             Proprietaires.Local.Add(lProprietaire);
             return lProprietaire;
         }
@@ -188,7 +191,7 @@ namespace GestionImmoBDD
             Types.Local.Add(lType);
             return lType;
         }
-        internal Locations AjouterLocation(uint aPrix)
+        internal Locations AjouterLocation(uint aPrix, DateTime aDateDebut, DateTime aDateFin)
         {
             //Gestion des erreurs
             if (aPrix == 0) { throw new ArgumentNullException($"{nameof(AjouterLocation)} : La location doit avoir un prix (valeur NULL ou chaine vide)."); }

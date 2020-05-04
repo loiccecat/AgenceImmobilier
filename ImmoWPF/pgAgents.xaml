@@ -68,7 +68,7 @@
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <ComboBox SelectedItem="{Binding Villes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                                  ItemsSource="{Binding Villes, RelativeSource={RelativeSource AncestorType={x:Type local:pgClients}}}" DisplayMemberPath="Nom" Width="150"/>
+                                                  ItemsSource="{Binding Villes, RelativeSource={RelativeSource AncestorType={x:Type local:pgAgents}}}" DisplayMemberPath="Nom" Width="150"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
